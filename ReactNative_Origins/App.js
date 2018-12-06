@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import FetchLocation from './Components/FetchLocation';
+import NewComponent from './Components/NewComponent';
 
 export default class App extends React.Component {
   
@@ -15,6 +16,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <FetchLocation onGetLocation= {this.getUserLocationHandler} />
+        <NewComponent toSend="hey this is the text i want to render" />
       </View>
     );
   }
