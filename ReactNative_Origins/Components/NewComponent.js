@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Button} from 'react-native';
 
 
 
@@ -9,9 +9,7 @@ const NewComponent = props => {
 			<Text>
 				hello {props.toSend}
 			</Text>
-			<Text>
-				hello
-			</Text>
+			<Button onPress={props.handleToggle}>Click me!</Button>
 		</View>
 	);
 

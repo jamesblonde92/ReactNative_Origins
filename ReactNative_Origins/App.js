@@ -5,6 +5,14 @@ import FetchLocation from './Components/FetchLocation';
 import NewComponent from './Components/NewComponent';
 
 export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sample: 'hey there come stay a while...',
+    } 
+
+  }
   
   getUserLocationHandler = () => {
     navigator.geolocation.getCurrentPosition(position => {
@@ -12,11 +20,17 @@ export default class App extends React.Component {
     }, err => consol.log(err));
   }
 
+  hanldeToggle = () => {
+    this.setState({
+      sample: 'you clicked me!',
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <FetchLocation onGetLocation= {this.getUserLocationHandler} />
-        <NewComponent toSend="hey this is the text i want to render" />
+        <NewComponent toSend={this.state.sample} click={this.hanldeToggle} />
       </View>
     );
   }
