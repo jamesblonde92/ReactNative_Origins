@@ -20,7 +20,8 @@ export default class App extends React.Component {
     }, err => consol.log(err));
   }
 
-  hanldeToggle = () => {
+  handleToggle = () => {
+    console.log('the button was clicked... lets see what happens...');
     this.setState({
       sample: 'you clicked me!',
     })
@@ -30,7 +31,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <FetchLocation onGetLocation= {this.getUserLocationHandler} />
-        <NewComponent toSend={this.state.sample} click={this.hanldeToggle} />
+        <NewComponent toSend={this.state.sample} handleToggle={this.handleToggle} />
       </View>
     );
   }

@@ -9,7 +9,7 @@ const NewComponent = props => {
 			<Text>
 				hello {props.toSend}
 			</Text>
-			<Button onPress={props.handleToggle}>Click me!</Button>
+			<Button title="click me" onPress={props.handleToggle}></Button>
 		</View>
 	);
 
